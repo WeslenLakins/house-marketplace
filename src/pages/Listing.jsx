@@ -1,6 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
 import { getDoc, doc } from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
@@ -36,6 +42,39 @@ function Listing() {
 
   return (
     <main>
+      <Swiper
+        style={{
+          height: '65vh',
+          width: '100%',
+          borderRadius: '10px',
+          boxShadow: '0 4px 14px 0 rgba(0, 0, 0, 0.1)',
+          overflow: 'hidden',
+        }}
+        modules={[Navigation, Pagination, Scrollbar, A11y]}
+        spaceBetween={0}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}>
+        {listing.imageUrls.map((imageUrl, index) => (
+          <SwiperSlide key={index}>
+            <div
+              style={{
+                backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 100%), url(${imageUrl})`,
+                backgroundSize: 'contain', // changed from 'cover' to 'contain'
+                backgroundRepeat: 'no-repeat', // added to prevent the image from repeating
+                backgroundPosition: 'center', // added to center the image
+                width: '100%',
+                height: '100%',
+              }}
+              alt={`Slide ${index}`}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
       <div
         className='shareIconDiv'
         onClick={() => {

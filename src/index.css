@@ -140,7 +140,7 @@ button {
 }
 
 .pageHeader {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 800;
 }
 
@@ -312,9 +312,13 @@ button {
   }
 }
 
-.exploreHeading,
+.exploreHeading {
+  font-size: 2em;
+  font-weight: 500;
+}
 .exploreCategoryHeading {
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 2em;
 }
 
 .exploreCategoryHeading {
@@ -395,6 +399,7 @@ button {
 .exploreCategoryName {
   font-weight: 500;
   text-align: left;
+  font-size: 1.5em;
 }
 
 .category {
