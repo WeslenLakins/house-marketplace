@@ -4,7 +4,7 @@
 
 Welcome to the House Marketplace Web Application, a robust and user-friendly platform for real estate listings and management. This project, developed by Weslen Lakins, is designed to cater to both property owners looking to list their properties and individuals seeking new homes or rental opportunities.
 
-Explore the application on for yourself: [House Marketplace](https://github.com/WeslenLakins/house-marketplace](https://house-marketplace-alpha-gilt.vercel.app/)
+Explore the application on for yourself: [House Marketplace](https://house-marketplace-alpha-gilt.vercel.app/)
 
 ## Key Features
 
